@@ -1,0 +1,34 @@
+<div class="box clearfix" ng-controller="addController">
+  <p class="add-title">新增球员信息</p>
+  <form name="addForm" class="add-form">
+    <div class="add-item">
+      <label>姓名:</label>
+      <input type="text" name="name" class="input-style" ng-model="player.name"  required />
+      <span class="hint" ng-show="addForm.name.$touched && addForm.name.$invalid">球员姓名不能为空</span>
+    </div>
+    <div class="add-item">
+      <label>号码:</label>
+      <input type="number" name="number" class="input-style" ng-model="player.number" val-player-num />
+      <span class="hint" ng-show="addForm.number.$touched && addForm.number.$invalid">球员号码不能为空</span>
+      <span class="hint" ng-show="addForm.number.$error.playerNum">球员号码必须是0~99之间的整数</span>
+    </div>
+    <div class="add-item">
+      <label>位置:</label>
+      <select class="input-style" name="position" ng-model="player.position" ng-options="position for position in positions" required></select>
+      <span class="hint" ng-show="addForm.position.$touched && addForm.position.$invalid">请选择球员位置</span>
+    </div>
+    <div class="add-item">
+      <label>球队:</label>
+      <select  class="input-style" name="team" ng-model="player.team" ng-options="team for team in teams" required></select>
+      <span class="hint" ng-show="addForm.team.$touched && addForm.team.$invalid">请选择球员所在球队</span>
+    </div>
+    <div class="add-item">
+      <label>头像:</label>
+      <input type="file" value="选择头像" />
+    </div>
+    <div class="add-item clearfix">
+      <input type="submit" value="保存" class="btn pull-left" ng-disabled="addForm.$invalid" />
+      <a href="#/" class="btn btn-cancel pull-left">取消</a>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,16 @@
+<div class="box" ng-controller="detailsController">
+  <div class="details">
+    <div class="details-box">
+      <p><img ng-src="src/images/{{player.thumb}}"/></p>
+      <h3>姓名:{{player.name}}</h3>
+      <p>位置:{{player.position}}</p>
+      <p>号码:{{player.num}}</p>
+      <p>球队:{{player.team}}</p>
+      <p>票数:{{player.votes}}</p>
+      <p class="clearfix vote">
+        <input type="submit" value="投票" class="btn pull-left" ng-disabled="addForm.$invalid" />
+        <a href="#/" class="btn btn-cancel pull-left">取消</a>
+      </p>
+    </div>
+  </div>
+</div>

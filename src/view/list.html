@@ -1,0 +1,52 @@
+<div class="box box-auto" ng-controller="listController">
+  <form name="form" class="clearfix">
+    <div class="filter-search pull-left">
+      <h4>search:</h4>
+      <input type="text" ng-model="query" class="input"/>
+    </div>
+    <div class="filter-rank pull-left">
+      <h4>Order by:</h4>
+      <select class="input" ng-model="orderProp">
+        <option value="-votes">票数</option>
+        <option value="name">姓名</option>
+      </select>
+    </div>
+  </form>  
+  <div class="player-list">
+    <p>
+      <a href="#/add" class="add">新增球员</a>
+    </p>
+    <table class="player-item" border="1" rules="none">
+      <thead class="player-title">
+        <tr>
+          <td></td>
+          <td>姓名</td>
+          <td>位置</td>
+          <td>号码</td>
+          <td>球队</td>
+          <td>票数</td>
+          <td>操作</td>          
+        </tr>
+      </thead>
+      <tbody>
+        <!--搜索和排序-->
+        <tr ng-repeat="player in players | filter:query | orderBy:orderProp" class="player-line">
+          <td><img ng-src="src/images/{{player.thumb}}" class="player-icon" /></td>
+          <td><a href="#/details/{{player.id}}">{{player.name}}</a></td>
+          <td>{{player.position}}</td>
+          <td>{{player.num}}</td>
+          <td>{{player.team}}</td>
+          <td>{{player.votes}}</td>
+          <td>
+            <a href="#/edit/{{player.id}}">编辑</a>
+            
+            <a href="#/" ng-click="removePlayer($event,player.id)">删除</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+ 

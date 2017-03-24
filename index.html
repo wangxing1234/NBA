@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="src/style/normalize.css"/>
+		<link rel="stylesheet" type="text/css" href="src/style/app.css"/>
+	</head>
+	<body>
+		<div class="header">
+		  <h1>NBA ALL-STAR LIST</h1>
+		</div>
+		<div class="container clearfix">
+		  <div ng-view></div>
+		</div>
+		
+		
+		<script src="lib/angular/angular.js"></script>
+		<script src="lib/angular-route/angular-route.min.js"></script>
+		<script src="src/script/app.js"></script>
+		<script src="src/controller/listController.js"></script>
+    <script src="src/controller/addController.js"></script>
+    <script src="src/controller/detailsController.js"></script>
+    <script src="src/controller/editController.js"></script>
+    <script src="src/directive/number.directive.js"></script>
+		<script src="src/route/config-route.js"></script>
+		
+	</body>
+</html>
